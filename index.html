@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Alchemy Co – Premium Car Detailing & Luxury Services</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            /* DEEP MIDNIGHT PALETTE — Logo Blue */
+            --deep-bg: hsl(222, 47%, 3%);
+            --obsidian-dark: hsl(222, 40%, 5%);
+            --obsidian-main: hsl(222, 35%, 9%);
+            --obsidian-light: hsl(222, 28%, 16%);
+
+            /* ELECTRIC BLUE ACCENTS — Logo #2563EB */
+            --gold-primary: hsl(217, 91%, 60%);
+            --gold-radiant: hsl(213, 97%, 72%);
+            --gold-dim: hsl(221, 83%, 40%);
+            --gold-gradient: linear-gradient(135deg, hsl(213, 97%, 72%), hsl(217, 91%, 60%), hsl(221, 83%, 40%));
+            --gold-text-gradient: linear-gradient(135deg, #93c5fd, #3b82f6, #1d4ed8);
+
+            /* TEXT & UTILITIES */
+            --text-white: hsl(210, 20%, 98%);
+            --text-gray: hsl(215, 15%, 75%);
+            --text-dim: hsl(215, 12%, 55%);
+            --glass-bg: rgba(37, 99, 235, 0.04);
+            --glass-border: rgba(147, 197, 253, 0.10);
+            --glass-gold-border: rgba(59, 130, 246, 0.20);
+
+            /* FONTS */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(at 0% 0%, hsla(217, 91%, 8%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(222, 47%, 6%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(213, 80%, 7%, 1) 0, transparent 50%),
+                var(--deep-bg);
+            background-attachment: fixed;
+            color: var(--text-white);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* REFINED PLATINUM LIGHT MODE - HOLISTIC */
+        body.light-mode {
+            --deep-bg: hsl(220, 30%, 98%);
+            --obsidian-dark: hsl(220, 25%, 95%);
+            --obsidian-main: hsl(220, 20%, 91%);
+            --obsidian-light: hsl(220, 15%, 87%);
+
+            --text-white: hsl(222, 47%, 11%);
+            --text-gray: hsl(222, 30%, 30%);
+            --text-dim: hsl(222, 20%, 50%);
+
+            --glass-bg: rgba(37, 99, 235, 0.04);
+            --glass-border: rgba(37, 99, 235, 0.12);
+            --glass-gold-border: rgba(37, 99, 235, 0.25);
+
+            --gold-primary: hsl(221, 83%, 45%);
+            --gold-radiant: hsl(217, 91%, 55%);
+            --gold-dim: hsl(224, 76%, 35%);
+            --gold-text-gradient: linear-gradient(135deg, #1d4ed8, #2563eb, #3b82f6);
+
+            background:
+                radial-gradient(at 0% 0%, hsla(217, 60%, 94%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(220, 30%, 97%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(213, 60%, 93%, 1) 0, transparent 50%),
+                var(--deep-bg);
+            background-attachment: fixed;
+        }
+
+        body.light-mode::before {
+            opacity: 0.06;
+            filter: invert(1) contrast(150%) brightness(120%);
+        }
+
+        body.light-mode nav {
+            background: hsla(220, 15%, 98%, 0.4);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode nav.scrolled {
+            background: hsla(220, 15%, 98%, 0.9);
+            border-bottom-color: var(--gold-primary);
+        }
+
+        body.light-mode .section-title {
+            color: var(--text-white);
+        }
+
+        body.light-mode .section-desc {
+            color: var(--text-gray);
+        }
+
+        body.light-mode .step-card {
+            background: var(--obsidian-dark);
+            border: 1px solid var(--glass-border);
+        }
+
+        body.light-mode .step-card:hover {
+            background: var(--obsidian-main);
+            border-color: var(--gold-primary);
+        }
+
+        body.light-mode .step-title,
+        body.light-mode .service-title {
+            color: var(--text-white);
+        }
+
+        body.light-mode .step-desc {
+            color: var(--text-gray);
+        }
+
+        body.light-mode .why-item {
+            background: var(--obsidian-dark);
+            border: 1px solid var(--glass-border);
+        }
+
+        body.light-mode .why-item h3 {
+            color: var(--text-white);
+        }
+
+        body.light-mode .why-item p {
+            color: var(--text-gray);
+        }
+
+        body.light-mode .testimonial-card {
+            background: var(--obsidian-dark);
+            border: 1px solid var(--glass-border);
+        }
+
+        body.light-mode .testimonial-text {
+            color: var(--text-white);
+        }
+
+        body.light-mode .testimonial-name {
+            color: var(--text-white);
+        }
+
+        body.light-mode .news-card::after {
+            background: linear-gradient(to bottom, transparent 30%, rgba(255, 255, 255, 0.95) 100%);
+        }
+
+        body.light-mode .news-title,
+        body.light-mode .news-date {
+            color: var(--text-white);
+        }
+
+        body.light-mode .news-card-content span {
+            color: var(--text-gray);
+        }
+
+        body.light-mode .personal-cta h2,
+        body.light-mode .assistant-name {
+            color: #fff;
+        }
+
+        body.light-mode .personal-cta-bg img {
+            opacity: 1;
+            filter: brightness(0.4) contrast(1.1);
+        }
+
+        body.light-mode .personal-cta::after {
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+        }
+
+        /* Form Light Mode Holistic */
+        body.light-mode .booking-intro h3 {
+            color: var(--text-white);
+        }
+
+        body.light-mode .booking-form {
+            background: var(--obsidian-dark);
+            border: 1px solid var(--glass-border);
+        }
+
+        body.light-mode .form-group label {
+            color: var(--text-white);
+        }
+
+        body.light-mode input,
+        body.light-mode select,
+        body.light-mode textarea {
+            background: var(--deep-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-white);
+        }
+
+        body.light-mode input:focus,
+        body.light-mode select:focus,
+        body.light-mode textarea:focus {
+            border-color: var(--gold-primary);
+            background: white;
+        }
+
+        body.light-mode input::placeholder,
+        body.light-mode textarea::placeholder {
+            color: var(--text-dim);
+        }
+
+        body.light-mode footer {
+            background: var(--obsidian-dark);
+            border-top-color: var(--glass-border);
+        }
+
+        body.light-mode .footer-tagline,
+        body.light-mode .footer-col a,
+        body.light-mode .footer-bottom {
+            color: var(--text-gray);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.03;
+            z-index: 1000;
+            pointer-events: none;
+            filter: contrast(150%) brightness(100%);
+        }
+
+        /* HIDE SCROLLBAR (Full Immersion) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE & Edge */
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* NAVIGATION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        nav {
+            position: fixed;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            z-index: 900;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 40px;
+            background: hsla(220, 20%, 5%, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        nav.scrolled {
+            top: 15px;
+            width: 90%;
+            padding: 12px 40px;
+            background: hsla(220, 20%, 2%, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-gold-border);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--text-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--gold-primary);
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .nav-cta {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--gold-gradient);
+            color: #fff;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 20px hsla(217, 91%, 60%, 0.35);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 30px hsla(217, 91%, 60%, 0.55);
+            color: #fff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1100;
+            padding: 10px;
+            margin-right: -10px;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 2px;
+            background: var(--text-white);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 4px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+            background: var(--gold-radiant);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(10px);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+            background: var(--gold-radiant);
+        }
+
+        /* MOBILE OVERLAY */
+        #mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1050;
+            background: hsla(220, 20%, 2%, 0.8);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        #mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .mobile-nav-links a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: block;
+        }
+
+        #mobile-nav-overlay.active .mobile-nav-links a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered link reveal */
+        .mobile-nav-links li:nth-child(1) a {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-nav-links li:nth-child(2) a {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-links li:nth-child(3) a {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-links li:nth-child(4) a {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-nav-links li:nth-child(5) a {
+            transition-delay: 0.5s;
+        }
+
+        .mobile-nav-links li:nth-child(6) a {
+            transition-delay: 0.6s;
+        }
+
+        .mobile-cta-wrapper {
+            margin-top: 50px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
+        }
+
+        #mobile-nav-overlay.active .mobile-cta-wrapper {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* THEME TOGGLE (V2 - CAPSULE) */
+        .theme-control {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .theme-toggle {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            width: 72px;
+            height: 34px;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            outline: none;
+            overflow: hidden;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        body.light-mode .theme-toggle {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .theme-toggle::after {
+            left: calc(100% - 30px);
+            background: var(--gold-radiant);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+
+        .toggle-icons {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 0.9rem;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .theme-toggle .icon {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        body.light-mode .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        body.light-mode .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* HERO SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 60px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-bg-container {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            overflow: hidden;
+            z-index: 1;
+            /* Fade out at the bottom to blend with the next section */
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        #hero-antigravity-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            pointer-events: none;
+        }
+
+        .hero-liquid-blobs {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
+            filter: blur(80px);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(0deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.5;
+            z-index: 3;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+
+        /* Floating geometric decorations */
+        .geo-shape {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .geo-circle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(59, 130, 246, 0.15);
+            border-radius: 50%;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .geo-square {
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgba(59, 130, 246, 0.12);
+            left: 8%;
+            bottom: 15%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-radiant);
+            padding: 8px 18px;
+            background: hsla(217, 91%, 60%, 0.08);
+            border: 1px solid var(--glass-gold-border);
+            border-radius: 30px;
+            margin: 0 auto 24px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge::before {
+            content: '◆';
+            font-size: 0.6rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            position: relative;
+        }
+
+        .hero h1 .gold-text {
+            background: var(--gold-text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px hsla(217, 91%, 60%, 0.3));
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            max-width: 550px;
+            margin: 0 auto 36px;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* BUTTONS */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .btn {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.08);
+            /* Frosted 'Ice' Base */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-white);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: var(--text-white);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border: 1.5px solid var(--gold-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary:hover {
+            background: hsla(45, 50%, 50%, 0.1);
+            border-color: var(--gold-radiant);
+            color: var(--gold-radiant);
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* SECTIONS */
+        /* ═══════════════════════════════════════════════════════════════ */
+        section {
+            padding: 100px 60px;
+            position: relative;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* SERVICES SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* BENTO PROCESS SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .bento-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .bento-featured {
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .bento-featured:hover {
+            border-color: var(--glass-gold-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .bento-featured img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            filter: brightness(0.7);
+        }
+
+        .bento-featured:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.85);
+        }
+
+        .bento-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            background: var(--obsidian-main);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .step-card:hover {
+            background: var(--obsidian-light);
+            border-color: var(--glass-gold-border);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .step-num-badge {
+            width: 32px;
+            height: 32px;
+            background: hsla(45, 50%, 50%, 0.1);
+            border: 1px solid var(--glass-gold-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold-radiant);
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-white);
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* WHY CHOOSE US SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 60px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .why-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .why-item:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .why-item:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .why-item:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+
+        .why-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-white);
+        }
+
+        .why-content p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* TESTIMONIALS SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            font-size: 5rem;
+            font-family: var(--font-display);
+            color: var(--gold-primary);
+            opacity: 0.15;
+            top: -10px;
+            right: 20px;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold-radiant);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            background: hsla(220, 20%, 4%, 0.4);
+        }
+
+        .testimonial-stars {
+            font-size: 0.8rem;
+            color: var(--gold-radiant);
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--deep-bg);
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-white);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 4px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* CTA BAND */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .cta-band {
+            background: linear-gradient(135deg, hsla(45, 50%, 50%, 0.15), hsla(45, 50%, 50%, 0.05));
+            border: 1px solid var(--glass-gold-border);
+            border-radius: 32px;
+            padding: 60px;
+            margin: 80px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            backdrop-filter: blur(20px);
+        }
+
+        .cta-band h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.2;
+            color: var(--text-white);
+        }
+
+        .cta-band p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            max-width: 300px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* BOOKING FORM SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .booking-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .booking-intro h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: var(--text-white);
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--gold-hover);
+        }
+
+        /* BOOKING FORM */
+        .booking-form {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px 32px;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 16px;
+            background: hsla(220, 20%, 8%, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: hsla(220, 20%, 12%, 0.8);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 4px hsla(45, 50%, 50%, 0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--gold-gradient);
+            color: var(--deep-bg);
+            border: none;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 10px;
+            box-shadow: 0 8px 25px hsla(45, 50%, 50%, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02) translateY(-3px);
+            box-shadow: 0 15px 40px hsla(45, 50%, 50%, 0.5);
+            color: #000;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* NEWS SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .explore-btn {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 12px 28px;
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 10px;
+            background: hsla(210, 15%, 98%, 0.03);
+            backdrop-filter: blur(10px);
+        }
+
+        .explore-btn:hover {
+            background: var(--text-white);
+            color: var(--deep-bg);
+            border-color: var(--text-white);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            position: relative;
+            height: 500px;
+            border-radius: 32px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .news-card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .news-card-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .news-card:hover .news-card-bg img {
+            transform: scale(1.1);
+        }
+
+        .news-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 2;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .news-card:hover::after {
+            opacity: 0.95;
+        }
+
+        .news-card-content {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.05em;
+        }
+
+        .news-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-title {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .read-more-btn {
+            background: var(--text-white);
+            color: var(--deep-bg);
+            text-decoration: none;
+            padding: 14px 0;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            display: block;
+        }
+
+        .read-more-btn:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+            background: #fff;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* FOOTER */
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #080808;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-white);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group select::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-gray);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold-primary);
+            background: #0F0F0F;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: var(--font-body);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-hover));
+            color: var(--navy-dark);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .book-pill-btn {
+            background: var(--text-white);
+            color: var(--deep-bg);
+            text-decoration: none;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-pill-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* PERSONAL CTA SECTION */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .personal-cta {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px;
+            overflow: hidden;
+            background: var(--deep-bg);
+        }
+
+        .personal-cta-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .personal-cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: brightness(0.6) contrast(1.1);
+        }
+
+        .personal-cta::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 2;
+        }
+
+        .personal-cta-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .personal-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 8vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-white);
+            margin-bottom: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .assistant-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .assistant-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            padding: 4px;
+            background: hsla(0, 0%, 0%, 0.5);
+            overflow: hidden;
+            box-shadow: 0 0 20px hsla(45, 50%, 50%, 0.3);
+        }
+
+        .assistant-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .assistant-info {
+            text-align: center;
+        }
+
+        .assistant-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-white);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .assistant-role {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* FOOTER */
+        /* ═══════════════════════════════════════════════════════════════ */
+        footer {
+            background: var(--deep-bg);
+            border-top: 1px solid var(--glass-gold-border);
+            padding: 80px 60px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--text-white);
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: hsla(45, 50%, 50%, 0.1);
+            border: 1px solid var(--glass-gold-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1rem;
+        }
+
+        .social-link:hover {
+            background: var(--gold-gradient);
+            color: var(--deep-bg);
+            border-color: var(--gold-radiant);
+            transform: translateY(-5px) rotate(8deg);
+            box-shadow: 0 10px 20px hsla(45, 50%, 50%, 0.3);
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold-primary);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-white);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* FLOATING ACTION BUTTONS */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .floating-actions {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 800;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: none;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .fab-call {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-hover));
+            color: var(--navy-dark);
+        }
+
+        .fab:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* PAYMENT MODAL (SILVER OBSIDIAN) */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-gold-border);
+            border-radius: 32px;
+            padding: 48px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.8) translateY(40px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-desc {
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .payment-opt {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .payment-opt:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--gold-primary);
+            transform: translateX(8px);
+        }
+
+        .payment-opt-icon {
+            font-size: 1.8rem;
+        }
+
+        .payment-opt-name {
+            font-weight: 700;
+            color: var(--text-white);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .payment-opt-tags {
+            font-size: 0.75rem;
+            color: var(--gold-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* LOADING SPINNER */
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(212, 175, 55, 0.1);
+            border-top: 3px solid var(--gold-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .qr-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 16px;
+            margin: 20px auto;
+            width: fit-content;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .qr-container img {
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+
+        .verify-btn {
+            background: var(--gold-gradient);
+            color: var(--deep-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(184, 134, 11, 0.4);
+        }
+
+        body.light-mode .modal-overlay {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        body.light-mode .modal-content {
+            background: var(--deep-bg);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .payment-opt {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* ANIMATIONS */
+        /* ═══════════════════════════════════════════════════════════════ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-blur {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: filter, transform, opacity;
+        }
+
+        .reveal.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-scale.visible,
+        .reveal-blur.visible,
+        .reveal-zigzag-left.visible,
+        .reveal-zigzag-right.visible,
+        .reveal-group.visible .reveal,
+        .reveal-group.visible .reveal-left,
+        .reveal-group.visible .reveal-right,
+        .reveal-group.visible .reveal-scale,
+        .reveal-group.visible .reveal-blur,
+        .reveal-group.visible .reveal-zigzag-left,
+        .reveal-group.visible .reveal-zigzag-right,
+        .reveal-group.visible .reveal-split-left,
+        .reveal-group.visible .reveal-split-right {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+            filter: blur(0) !important;
+        }
+
+        .reveal-split-left {
+            opacity: 0;
+            transform: translateX(80px) scale(0.95);
+            transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        .reveal-split-right {
+            opacity: 0;
+            transform: translateX(-80px) scale(0.95);
+            transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        .reveal-zigzag-left {
+            opacity: 0;
+            transform: translateX(-100px) translateY(20px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        .reveal-zigzag-right {
+            opacity: 0;
+            transform: translateX(100px) translateY(20px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform, opacity;
+        }
+
+        /* Parallax Utilities */
+        .parallax-bg {
+            transform: translateY(calc(var(--scroll-y, 0) * 0.2px));
+            will-change: transform;
+        }
+
+        .parallax-fast {
+            transform: translateY(calc(var(--scroll-y, 0) * -0.15px));
+            will-change: transform;
+        }
+
+        .parallax-slow {
+            transform: translateY(calc(var(--scroll-y, 0) * 0.1px));
+            will-change: transform;
+        }
+
+        .parallax-rotate {
+            transform: rotate(calc(var(--scroll-y, 0) * 0.02deg));
+            will-change: transform;
+        }
+
+
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* RESPONSIVE */
+        /* ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            nav {
+                top: 15px;
+                width: 92%;
+                padding: 12px 24px;
+            }
+
+            nav.scrolled {
+                top: 10px;
+                padding: 10px 24px;
+            }
+
+            .nav-links {
+                display: none;
+                position: static;
+                transform: none;
+                left: auto;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 70px 24px 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            section {
+                padding: 60px 24px;
+            }
+
+            .cta-band {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 24px;
+                margin: 40px 0;
+            }
+
+            .booking-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .bento-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bento-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-featured {
+                min-height: 300px;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .floating-actions {
+                bottom: 20px;
+                right: 20px;
+                flex-direction: row;
+            }
+
+            .geo-circle,
+            .geo-square {
+                display: none;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-card {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+
+            section {
+                padding: 40px 16px;
+            }
+
+            .hero {
+                padding: 80px 16px 40px;
+            }
+
+            .cta-band {
+                padding: 30px 16px;
+                margin: 30px 0;
+            }
+
+            .booking-form {
+                padding: 24px;
+            }
+
+            footer {
+                padding: 40px 16px;
+            }
+
+            .fab {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .floating-actions {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <img src="https://res.cloudinary.com/drlg1t6pk/image/upload/v1774865270/logo_ilq8wl.png"
+                alt="Auto Alchemy Co">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#book">Contact</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; margin-left: auto;">
+            <div class="theme-control">
+                <button class="theme-toggle" id="theme-toggle-v2" title="Toggle Light/Dark Mode">
+                    <span class="icon moon-icon">🌙</span>
+                    <span class="icon sun-icon">☀️</span>
+                </button>
+            </div>
+            <a href="#book" class="nav-cta">Book Now</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#why" onclick="toggleMenu()">Why Us</a></li>
+            <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="#book" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+        <div class="mobile-cta-wrapper">
+            <a href="#book" class="nav-cta" onclick="toggleMenu()">Book Now</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg-container">
+            <canvas id="hero-antigravity-canvas"></canvas>
+            <div class="hero-liquid-blobs"></div>
+            <div class="hero-grid parallax-bg"></div>
+        </div>
+        <div class="geo-shape geo-circle parallax-fast"></div>
+        <div class="geo-shape geo-square parallax-slow"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">Premium Mobile Detailing</div>
+            <h1>Transform Your <span class="gold-text">Ride</span> Into Art</h1>
+            <p class="hero-desc">
+                Elite car detailing delivered to your doorstep. From paint correction to ceramic coating, we bring
+                luxury maintenance to Chennai's finest vehicles.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#book" class="btn btn-primary">
+                    Book Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELITE SERVICES (BENTO) -->
+    <section id="services" class="reveal-group">
+        <div class="section-label reveal-left">Our Alchemy</div>
+        <h2 class="section-title reveal-left">Elite Services<br /></h2>
+        <p class="section-desc reveal-left">
+            Handcrafted detailing that exceeds expectations. Every treatment is customized to your vehicle's DNA.
+        </p>
+
+        <div class="bento-container">
+            <!-- Featured Card (Splits from center to Left) -->
+            <div class="bento-featured reveal-split-left" style="transition-delay: 200ms;">
+                <img src="assets/delivery.png" alt="Auto Alchemy Elite Detailing">
+                <div style="position: relative; z-index: 2;">
+                    <h3 class="service-title" style="font-size: 2.2rem; margin-bottom: 10px;">Excellence Unveiled</h3>
+                    <p style="color: var(--text-white); opacity: 0.8; max-width: 400px;">Our specialized mobile team
+                        brings showroom-grade transformations directly to your location.</p>
+                </div>
+            </div>
+
+            <!-- Services Grid (Bento) -->
+            <div class="bento-steps-grid">
+                <div class="step-card reveal-split-right" style="transition-delay: 400ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">💎</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">Express Detail</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹1,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">The essential refresh. Exterior decontamination and
+                        deep interior sanitation.</p>
+                </div>
+                <div class="step-card reveal-split-right" style="transition-delay: 500ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">🧤</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">Full Revive</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹2,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">Complete restoration. Clay bar treatment and
+                        premium carnauba protection.</p>
+                </div>
+                <div class="step-card reveal-split-right" style="transition-delay: 600ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">🛡️</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">Decon Deep</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹3,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">Industrial fallout removal. Specialized chemical
+                        bath for iron and rail dust.</p>
+                </div>
+                <div class="step-card reveal-split-right" style="transition-delay: 700ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">✨</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">Paint Correction</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹5,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">Level 3 defect removal. Eliminating swirls and
+                        scratches for mirror-like depth.</p>
+                </div>
+                <div class="step-card reveal-split-right" style="transition-delay: 800ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">💍</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">Ceramic Aura</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹9,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">Eternal protection. 9H hardness coating with
+                        semi-permanent hydrophobic gloss.</p>
+                </div>
+                <div class="step-card reveal-split-right" style="transition-delay: 900ms;">
+                    <div class="service-icon" style="font-size: 2.2rem; margin-bottom: 15px;">🚀</div>
+                    <h3 class="step-title" style="font-size: 1.3rem;">PPF Defense</h3>
+                    <div
+                        style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); margin-bottom: 10px;">
+                        FROM ₹14,999</div>
+                    <p class="step-desc" style="font-size: 0.88rem;">Ballistic protection. Self-healing film
+                        installation for high-impact zones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why">
+        <div class="section-label">Our Promise</div>
+        <h2 class="section-title">Why Choose<br />Auto Alchemy?</h2>
+        <p class="section-desc">
+            We're not just a detailing service—we're custodians of automotive excellence.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-item reveal-left">
+                <div class="why-content">
+                    <h3>Mobile Service</h3>
+                    <p>We come to your home or office. No travel needed—luxury on your schedule.</p>
+                </div>
+            </div>
+
+            <div class="why-item reveal-right">
+                <div class="why-content">
+                    <h3>Premium Materials</h3>
+                    <p>Only the finest products: Gyeon coatings, Carpro, and professional-grade tools.</p>
+                </div>
+            </div>
+
+            <div class="why-item reveal-left">
+                <div class="why-content">
+                    <h3>Expert Team</h3>
+                    <p>Certified professionals with 8+ years in luxury automotive detailing.</p>
+                </div>
+            </div>
+
+            <div class="why-item reveal-right">
+                <div class="why-content">
+                    <h3>Fast Turnaround</h3>
+                    <p>Confirmation within the hour. Same-day service available for select areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <div class="section-label">Client Stories</div>
+        <h2 class="section-title">Loved by<br />Car Enthusiasts</h2>
+        <p class="section-desc">
+            Real reviews from real customers across Chennai.
+        </p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal-blur">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Absolutely phenomenal service. My white Fortuner looked showroom fresh. They even detailed the
+                    engine bay. Worth every rupee—highly recommended!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div>
+                        <div class="testimonial-name">Rajesh Kumar</div>
+                        <div class="testimonial-role">Toyota Fortuner Owner · Velachery</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal-blur">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Booked the full detail package and they arrived exactly on time. The interior transformation was
+                    unreal—all dust and stains completely gone."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">P</div>
+                    <div>
+                        <div class="testimonial-name">Priya Krishnamurthy</div>
+                        <div class="testimonial-role">Kia Seltos Owner · Adyar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal-blur">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Used their paint correction on my BMW. The swirl marks from the dealership wash were completely
+                    eliminated. Genuinely know what they're doing."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <div class="testimonial-name">Arjun Nair</div>
+                        <div class="testimonial-role">BMW 3 Series Owner · T. Nagar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <div class="cta-band reveal-scale">
+        <div>
+            <h2>Ready for a<br />Transformation?</h2>
+            <p>Your car deserves to shine. Book your premium detailing session today.</p>
+        </div>
+        <a href="#book" class="btn btn-primary">Schedule Now</a>
+    </div>
+
+    <!-- BOOKING FORM SECTION -->
+    <section id="book" class="reveal-group">
+        <div class="booking-section">
+            <div class="booking-intro">
+                <div class="section-label reveal-left">Get Started</div>
+                <h2 class="section-title reveal-left" style="margin-top: 0; text-align: left;">Book
+                    Your<br />Appointment</h2>
+
+                <p style="color: var(--text-gray); line-height: 1.8; margin-bottom: 30px;">
+                    Our mobile unit comes to you. Fill in your details and we'll confirm your slot within the hour.
+                    Flexible scheduling for your convenience.
+                </p>
+
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">+91 98765 43210</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value"><a href="mailto:hello@autoalchemy.com">hello@autoalchemy.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <div class="contact-label">Hours</div>
+                            <div class="contact-value">Mon – Sun: 7:00 AM – 7:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div class="contact-label">Service Area</div>
+                            <div class="contact-value">All Chennai — We Come To You</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="booking-form" onsubmit="handleSubmit(event)">
+                <div class="form-row reveal-zigzag-left" style="transition-delay: 100ms;">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="Arjun" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Nair" required>
+                    </div>
+                </div>
+
+                <div class="form-group reveal-zigzag-right" style="transition-delay: 200ms;">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+91 98765 43210" required>
+                </div>
+
+                <div class="form-group reveal-zigzag-left" style="transition-delay: 300ms;">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="arjun@email.com" required>
+                </div>
+
+                <div class="form-group reveal-zigzag-right" style="transition-delay: 400ms;">
+                    <label>Vehicle</label>
+                    <input type="text" placeholder="e.g., Hyundai Creta 2022" required>
+                </div>
+
+                <div class="form-group reveal-zigzag-left" style="transition-delay: 500ms;">
+                    <label>Service Package</label>
+                    <select required>
+                        <option value="" disabled selected>Select a package…</option>
+                        <option value="express">Express Detail – ₹1,999</option>
+                        <option value="full">Full Detail – ₹2,999</option>
+                        <option value="decontam">Decontamination – ₹3,999</option>
+                        <option value="paintcorr">Paint Correction – ₹5,999</option>
+                        <option value="ceramic">Ceramic Coating – ₹9,999</option>
+                        <option value="ppf">PPF Wrap – ₹14,999</option>
+                    </select>
+                </div>
+
+                <div class="form-row reveal-zigzag-right" style="transition-delay: 600ms;">
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <select required>
+                            <option>7:00 AM</option>
+                            <option>9:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>1:00 PM</option>
+                            <option>3:00 PM</option>
+                            <option>5:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group reveal-zigzag-left" style="transition-delay: 700ms;">
+                    <label>Location / Notes</label>
+                    <textarea placeholder="Your address and any special requests…" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn reveal-scale" style="transition-delay: 800ms;">Confirm Booking
+                    →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="news">
+        <div class="section-label">Journal</div>
+        <div class="news-header">
+            <h2 class="section-title">Our Latest News<br />and Stories</h2>
+            <a href="#" class="explore-btn">Explore All</a>
+        </div>
+
+        <div class="news-grid">
+            <!-- Card 1 -->
+            <div class="news-card reveal-right">
+                <div class="news-card-bg">
+                    <img src="assets/porsche.png" alt="Porsche 911 GT3 RS">
+                </div>
+                <div class="news-card-content">
+                    <span class="news-date">August 1, 2025</span>
+                    <div class="news-info">
+                        <h3 class="news-title">Porsche 911 GT3 RS joins our premium supercar collection</h3>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="news-card reveal-right">
+                <div class="news-card-bg">
+                    <img src="assets/delivery.png" alt="Express Delivery">
+                </div>
+                <div class="news-card-content">
+                    <span class="news-date">July 20, 2025</span>
+                    <div class="news-info">
+                        <h3 class="news-title">Express 90-minute rapid mobile detailing service launched</h3>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="news-card reveal-right">
+                <div class="news-card-bg">
+                    <img src="assets/corvette.png" alt="Summer 2025">
+                </div>
+                <div class="news-card-content">
+                    <span class="news-date">July 15, 2025</span>
+                    <div class="news-info">
+                        <h3 class="news-title">Summer 2025 premium car detailing special early-bird discounts</h3>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAL CTA SECTION -->
+    <section class="personal-cta reveal-left">
+        <div class="personal-cta-bg">
+            <img src="assets/yellow-lamborghini.png" alt="Premium Lamborghini">
+        </div>
+        <div class="personal-cta-content">
+            <h2>Experience premium service<br />and have your car restored<br />in 90 minutes</h2>
+
+            <div class="assistant-profile">
+                <div class="assistant-avatar">
+                    <img src="assets/michael-carter.png" alt="Michael Carter">
+                </div>
+                <div class="assistant-info">
+                    <span class="assistant-name">Michael Carter</span>
+                    <span class="assistant-role">Your Elite Service Consultant</span>
+                </div>
+            </div>
+
+            <a href="#book" class="book-pill-btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://res.cloudinary.com/drlg1t6pk/image/upload/v1774865270/logo_ilq8wl.png"
+                    alt="Auto Alchemy Co" class="footer-logo">
+                <p class="footer-tagline">
+                    Chennai's premium mobile detailing studio — where every car becomes a work of art.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">𝕏</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">📸</a>
+                    <a href="#" class="social-link">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#book">Book Now</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Express Detail</a></li>
+                    <li><a href="#services">Full Detail</a></li>
+                    <li><a href="#services">Ceramic Coating</a></li>
+                    <li><a href="#services">Paint Correction</a></li>
+                    <li><a href="#services">PPF Wrap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Mon – Sun: 7:00 AM – 7:00 PM</li>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:hello@autoalchemy.com">hello@autoalchemy.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 Auto Alchemy Co. All rights reserved.</div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div class="floating-actions">
+        <a href="https://wa.me/917558138968" class="fab fab-whatsapp" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+                <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+        <a href="tel:+917558138968" class="fab fab-call" title="Call Us">📞</a>
+    </div>
+
+    <!-- PAYMENT SELECTION MODAL -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-title">Payment Method</h3>
+            <p class="modal-desc">
+                Your booking is almost complete. Please select your preferred payment method below.
+            </p>
+
+            <div class="payment-options">
+                <div class="payment-opt" onclick="handlePaymentChoice('COD')">
+                    <div class="payment-opt-icon">💵</div>
+                    <div>
+                        <span class="payment-opt-name">Cash on Service (COD)</span>
+                        <span class="payment-opt-tags">PAY AFTER TRANSFORMATION</span>
+                    </div>
+                </div>
+
+                <div class="payment-opt" onclick="handlePaymentChoice('Paytm')">
+                    <div class="payment-opt-icon">📱</div>
+                    <div>
+                        <span class="payment-opt-name">Digital Payment</span>
+                        <span class="payment-opt-tags">PAYTM / UPI / G-PAY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT PROCESSING MODAL -->
+    <div id="paymentProcessingModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="loader-spinner"></div>
+            <h3 class="modal-title">Processing</h3>
+            <p class="modal-desc">Connecting to Secure Paytm Gateway...</p>
+        </div>
+    </div>
+
+    <!-- PAYMENT QR MODAL -->
+    <div id="paymentQRModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-title">Scan to Pay</h3>
+            <p class="modal-desc">Open Paytm / UPI App to scan and pay.</p>
+
+            <div class="qr-container">
+                <img id="upi-qr-image" src="" alt="Payment QR Code">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <div style="font-size: 1.2rem; font-weight: 800; color: #fff;">₹<span id="qr-amount-display">0</span>
+                </div>
+                <div style="font-size: 0.7rem; color: var(--gold-primary);">MERCHANT: AUTO ALCHEMY CO.</div>
+            </div>
+
+            <button class="verify-btn" onclick="verifyPayment()">I Have Paid</button>
+            <button class="nav-cta"
+                style="background: none; border: 1px solid var(--glass-border); color: #999; margin-top: 10px; width: 100%;"
+                onclick="closeAllModals()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // High-performance Theme Manager (v2)
+        const themeManager = {
+            btn: document.getElementById('theme-toggle-v2'),
+            body: document.body,
+
+            init() {
+                const saved = localStorage.getItem('alchemy_theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                if (saved === 'light' || (!saved && !systemDark)) {
+                    this.body.classList.add('light-mode');
+                }
+
+                if (this.btn) {
+                    this.btn.addEventListener('click', () => this.toggle());
+                }
+            },
+
+            toggle() {
+                this.body.classList.toggle('light-mode');
+                const isLight = this.body.classList.contains('light-mode');
+                localStorage.setItem('alchemy_theme', isLight ? 'light' : 'dark');
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => themeManager.init());
+
+        // High-performance Scroll & Parallax Engine
+        const scrollData = {
+            y: window.scrollY,
+            ticking: false
+        };
+
+        function updateParallax() {
+            document.documentElement.style.setProperty('--scroll-y', `${scrollData.y}px`);
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (scrollData.y > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            scrollData.ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            scrollData.y = window.scrollY;
+            if (!scrollData.ticking) {
+                window.requestAnimationFrame(updateParallax);
+                scrollData.ticking = true;
+            }
+        });
+
+        // Initialize parallax on load
+        window.addEventListener('DOMContentLoaded', updateParallax);
+
+
+        // Global state for booking data
+        let currentBookingData = null;
+
+        const servicePriceMap = {
+            'express': 1999,
+            'full': 2999,
+            'decontam': 3999,
+            'paintcorr': 5999,
+            'ceramic': 9999,
+            'ppf': 14999
+        };
+
+        // Form submission handler (Step 1)
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            currentBookingData = {
+                firstName: formData.get('firstName') || event.target.querySelector('input[type="text"]').value,
+                lastName: formData.get('lastName') || event.target.querySelectorAll('input[type="text"]')[1].value,
+                phone: formData.get('phone') || event.target.querySelector('input[type="tel"]').value,
+                email: formData.get('email') || event.target.querySelector('input[type="email"]').value,
+                vehicle: event.target.querySelector('input[placeholder*="Hyundai"]').value,
+                service: event.target.querySelector('select').value,
+                date: event.target.querySelector('input[type="date"]').value,
+                time: event.target.querySelectorAll('select')[1].value,
+                notes: event.target.querySelector('textarea').value
+            };
+
+            // Show Selection Modal
+            document.getElementById('paymentModal').classList.add('active');
+        }
+
+        // Payment Choice handler (Step 2)
+        function handlePaymentChoice(method) {
+            document.getElementById('paymentModal').classList.remove('active');
+
+            if (method === 'Paytm') {
+                showPaytmFlow();
+            } else {
+                finalizeBooking('COD');
+            }
+        }
+
+        function showPaytmFlow() {
+            // 1. Show Processing
+            const processingModal = document.getElementById('paymentProcessingModal');
+            processingModal.classList.add('active');
+
+            // 2. Transition to QR
+            setTimeout(() => {
+                processingModal.classList.remove('active');
+
+                const amount = servicePriceMap[currentBookingData.service] || 1999;
+                const upiID = '7558138968@paytm';
+                const upiLink = `upi://pay?pa=${upiID}&pn=AutoAlchemy&am=${amount}&cu=INR`;
+
+                document.getElementById('upi-qr-image').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiLink)}`;
+                document.getElementById('qr-amount-display').textContent = amount.toLocaleString('en-IN');
+
+                document.getElementById('paymentQRModal').classList.add('active');
+            }, 2000);
+        }
+
+        function verifyPayment() {
+            const qrModal = document.getElementById('paymentQRModal');
+            const verifyBtn = qrModal.querySelector('.verify-btn');
+
+            verifyBtn.textContent = 'Checking Status...';
+            verifyBtn.style.opacity = '0.7';
+            verifyBtn.disabled = true;
+
+            setTimeout(() => {
+                finalizeBooking('Paytm/UPI');
+                closeAllModals();
+                verifyBtn.textContent = 'I Have Paid';
+                verifyBtn.style.opacity = '1';
+                verifyBtn.disabled = false;
+            }, 2500);
+        }
+
+        function finalizeBooking(method) {
+            if (!currentBookingData) return;
+
+            const finalData = {
+                ...currentBookingData,
+                paymentMethod: method,
+                timestamp: new Date().toISOString()
+            };
+
+            console.log('Final Lead Captured:', finalData);
+
+            const msg = method === 'COD'
+                ? '✅ Booking confirmed! You can pay after service.'
+                : '✅ Payment Verified! Your elite transformation is scheduled.';
+
+            alert(msg);
+
+            const form = document.querySelector('.booking-form');
+            if (form) form.reset();
+            currentBookingData = null;
+        }
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+        }
+
+        // Liquid Mobile Overlay Toggle
+        function toggleMenu() {
+            const hamburger = document.getElementById('hamburger-btn');
+            const overlay = document.getElementById('mobile-nav-overlay');
+            const body = document.body;
+
+            if (!hamburger || !overlay) return;
+
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Scroll Lock
+            if (overlay.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+                // Trigger staggered reveal
+                overlay.querySelectorAll('.mobile-nav-links a').forEach((link, i) => {
+                    link.style.transitionDelay = `${0.1 + (i * 0.1)}s`;
+                });
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
+        // Enhanced Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Slight delay based on element's index in its parent for stagger effect
+                    const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    // Once visible, stop observing to save resources
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with reveal classes
+        function initReveals() {
+            const revealElements = document.querySelectorAll('[class*="reveal"]');
+            revealElements.forEach(el => observer.observe(el));
+        }
+
+        window.addEventListener('DOMContentLoaded', initReveals);
+
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+        // =========================================================================
+        // ANTIGRAVITY BACKGROUND ENGINE
+        // =========================================================================
+        class AntigravityBackground {
+            constructor() {
+                this.canvas = document.getElementById('hero-antigravity-canvas');
+                if (!this.canvas) return;
+
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.particleCount = window.innerWidth < 768 ? 40 : 100;
+                this.mouse = { x: -1000, y: -1000 };
+
+                this.init();
+                this.animate();
+                this.addListeners();
+            }
+
+            init() {
+                this.resize();
+                this.particles = [];
+                for (let i = 0; i < this.particleCount; i++) {
+                    this.particles.push(this.createParticle());
+                }
+            }
+
+            createParticle(isNew = false) {
+                return {
+                    x: Math.random() * this.canvas.width,
+                    y: isNew ? this.canvas.height + 10 : Math.random() * this.canvas.height,
+                    size: Math.random() * 2 + 0.5,
+                    speedY: Math.random() * 0.5 + 0.2, // Upward speed
+                    speedX: (Math.random() - 0.5) * 0.2,
+                    opacity: Math.random() * 0.5 + 0.2,
+                    color: `rgba(212, 175, 55, ${Math.random() * 0.3 + 0.1})`
+                };
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight; // Fill the hero height
+            }
+
+            addListeners() {
+                window.addEventListener('resize', () => this.resize());
+
+                const heroSection = document.querySelector('.hero');
+                heroSection.addEventListener('mousemove', (e) => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    this.mouse.x = e.clientX - rect.left;
+                    this.mouse.y = e.clientY - rect.top;
+                });
+
+                heroSection.addEventListener('mouseleave', () => {
+                    this.mouse.x = -1000;
+                    this.mouse.y = -1000;
+                });
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach((p, index) => {
+                    // Upward motion
+                    p.y -= p.speedY;
+                    p.x += p.speedX + Math.sin(p.y / 50) * 0.1;
+
+                    // Mouse Interaction (Repulsion)
+                    const dx = this.mouse.x - p.x;
+                    const dy = this.mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        const force = (150 - dist) / 150;
+                        p.x -= (dx / dist) * force * 2;
+                        p.y -= (dy / dist) * force * 2;
+                    }
+
+                    // Reset if out of bounds
+                    if (p.y < -10) {
+                        this.particles[index] = this.createParticle(true);
+                    }
+
+                    // Draw
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.shadowBlur = p.size * 2;
+                    this.ctx.shadowColor = 'rgba(212, 175, 55, 0.4)';
+                    this.ctx.fill();
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize Antigravity on load
+        window.addEventListener('load', () => {
+            new AntigravityBackground();
+        });
+    </script>
+
+</body>
+
+</html>
